@@ -41,6 +41,8 @@ body {
   }
 }
 
+
+
 /* Layout */
 
 .wrapper {
@@ -63,6 +65,23 @@ body {
   border: 1px solid $color-dark;
   border-radius: 5px;
 }
+
+.tag-size-1  {
+  font-size: smaller;
+}
+.tag-size-2  {
+  font-size: small;
+}
+.tag-size-3  {
+  font-size: medium;
+}
+.tag-size-4  {
+  font-size: large;
+}
+.tag-size-5  {
+  font-size: larger;
+}
+
 
 /* Logo */
 
@@ -118,3 +137,5 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+
