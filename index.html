@@ -193,11 +193,26 @@
 
 
 
-	<script src="js/functions.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
 	<script id="template-article-link" type="text/x-handlebars-template">
 		<li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
 	</script>
+	<script id="tagCloudLink" type="text/x-handlebars-template">
+		<li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
+		<li><a href="#tag-cat"><span>cat</span></a></li>
+		<li><a href="#tag-cactus"><span>cactus</span></a></li>
+		<li><a href="#tag-scissors"><span>scissors</span></a></li>
+		<li><a href="#tag-knife"><span>knife</span></a></li>
+	</script>
+	<script id="AuthorCloudLink" type="text/x-handlebars-template">
+		<li><a href="#{{ id }}"><span>{{ author }}</span></a></li>
+		<li><a href="#author-Theo Tabby">Theo Tabby</a></li>
+		<li><a href="#author-George Tuxedo">George Tuxedo</a></li>
+		<li><a href="#author-Kitty Toebean">Kitty Toebean</a></li>
+		<li><a href="#author-Marion Berry">Marion Berry</a></li>
+	</script>
+
+
 	<script src="js/script.js"></script>
 </body>
 </html>
