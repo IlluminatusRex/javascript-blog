@@ -199,18 +199,20 @@
 	</script>
 	<script id="tagCloudLink" type="text/x-handlebars-template">
 		<li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
-		<li><a href="#tag-cat"><span>cat</span></a></li>
-		<li><a href="#tag-cactus"><span>cactus</span></a></li>
-		<li><a href="#tag-scissors"><span>scissors</span></a></li>
-		<li><a href="#tag-knife"><span>knife</span></a></li>
 	</script>
 	<script id="AuthorCloudLink" type="text/x-handlebars-template">
 		<li><a href="#{{ id }}"><span>{{ author }}</span></a></li>
-		<li><a href="#author-Theo Tabby">Theo Tabby</a></li>
-		<li><a href="#author-George Tuxedo">George Tuxedo</a></li>
-		<li><a href="#author-Kitty Toebean">Kitty Toebean</a></li>
-		<li><a href="#author-Marion Berry">Marion Berry</a></li>
 	</script>
+	<script id="template-tag-cloud-link" type="text/x-handlebars-template">
+		{{#each tags}}
+		<li><a href="#tag-{{ tag }}" class="{{className}}"><span>{{ tag }} ({{ count }})</span></a></li>
+		{{/each}}
+	  </script>
+	<script id="template-author-cloud-link" type="text/x-handlebars-template">
+		{{#each tags}}
+		<li><a href="#author-{{ tag }}" class="{{className}}"><span>{{ tag }} ({{ count }})</span></a></li>
+		{{/each}}
+	  </script>
 
 
 	<script src="js/script.js"></script>

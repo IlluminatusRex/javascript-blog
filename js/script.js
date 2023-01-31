@@ -2,7 +2,9 @@
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
   tagCloudLink: Handlebars.compile(document.querySelector('#tagCloudLink').innerHTML),
-  AuthorCloudLink: Handlebars.compile(document.querySelector('#AuthorCloudLink').innerHTML)
+  AuthorCloudLink: Handlebars.compile(document.querySelector('#AuthorCloudLink').innerHTML),
+  TagLinkLoop: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
+  AuthorLinkLoop: Handlebars.compile(document.querySelector('#template-author-cloud-link').innerHTML)
 }
 /*document.getElementById('test-button').addEventListener('click', function(){
     const links = document.querySelectorAll('.titles a');
@@ -341,13 +343,14 @@ const templates = {
         count: allTags[tag],
         className: calculateTagClass(allTags[tag], tagsParams)
       });
+      
       //allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag],tagsParams) + '"><span>' + tag +  ' (' + allTags[tag] + ') ' + '</span></a></li>';
     }
     /* [NEW] END LOOP: for each tag in allTags: */
 
     /*[NEW] add HTML from allTagsHTML to tagList */
     //tagList.innerHTML = allTagsHTML;
-    tagList.innerHTML = templates.tagCloudLink(allTagsData);
+    tagList.innerHTML = templates.TagLinkLoop(allTagsData);;
     console.log('AJAXTEST: ' + allTagsData);
   }
 
@@ -455,7 +458,7 @@ const templates = {
   
       /*[NEW] add HTML from allTagsHTML to tagList */
       //tagList.innerHTML = allTagsHTML;
-      tagList.innerHTML = templates.AuthorCloudLink(allAuthorsData);
+      tagList.innerHTML = templates.AuthorLinkLoop(allAuthorsData);
     }
 
   generateAuthorsList();
