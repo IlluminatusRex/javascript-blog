@@ -125,9 +125,9 @@ const templates = {
         /* generate HTML of the link */
         console.log('Tag: ' + tag);
         /* add generated code to html variable */
-        const linkHTML = '<li><a href="#tag-' + tag +'" style="text-decoration: inherit">'+ tag +'	&#xA0</a></li>';
+        const linkHTMLData = {id: tag, title: tag};
+        const linkHTML = templates.tagCloudLink(linkHTMLData);
         html = html + linkHTML;
-        console.log(linkHTML);
       }
       
       titleList.insertAdjacentHTML('beforeend', html);
@@ -201,7 +201,9 @@ const templates = {
       const articleAuthor = article.getAttribute('data-author');
       console.log(articleAuthor);
       // add linkHTML as link in HTML
-      const linkHTML = '<a href="#author-' + articleAuthor +'">'+ articleAuthor +'</a>';
+      const linkHTMLData = {id: articleAuthor, title: articleAuthor};
+      const linkHTML = templates.AuthorCloudLink(linkHTMLData);
+      //const linkHTML = '<a href="#author-' + articleAuthor +'">'+ articleAuthor +'</a>';
       console.log(linkHTML);
       // add link to HTML content
       authorName.insertAdjacentHTML('beforeend', linkHTML);
@@ -302,7 +304,8 @@ const templates = {
       for(let tag of articleTagsArray){
   
         /* generate HTML of the link */
-        const linkHTML = '<li><a href="#tag-' + tag +'">'+ tag +'</a></li>';
+        const linkHTMLData = {id: tag, title: tag};
+        const linkHTML = templates.tagCloudLink(linkHTMLData);
         console.log('Tag: ' + tag);
   
         /* add generated code to html variable */
@@ -412,7 +415,8 @@ const templates = {
         for(let tag of articleTagsArray){
     
           /* generate HTML of the link */
-          const linkHTML = '<li><a href="#tag-' + tag +'">'+ tag +'</a></li>';
+          const linkHTMLData = {id: tag, title: tag};
+          const linkHTML = templates.tagCloudLink(linkHTMLData);
     
           /* add generated code to html variable */
           html = html + linkHTML;
